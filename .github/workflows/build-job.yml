@@ -209,7 +209,7 @@ jobs:
       - name: Test Import
         run: |
           cd build
-          micromamba run -n bindgen -e LD_DEBUG=libs python -c"import OCP"
+          micromamba run -n bindgen -e LD_DEBUG=libs python -c"import OCP; OCP._load_all()"
 
       - name: Run tests
         run: |
