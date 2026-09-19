@@ -242,6 +242,7 @@ jobs:
           micromamba run -n bindgen python -m pytest ../tests
 
       - name: Build Conda Package
+        if: github.repository == 'CadQuery/OCP'
         env:
           BUILD_STRING: "1"
           TOKEN: ${{ secrets.ANACONDA_TOKEN }}
