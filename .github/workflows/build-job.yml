@@ -166,7 +166,7 @@ jobs:
       - name: Compile (Mac)
         if: contains(inputs.runner_compile, 'mac')
         run: |
-          micromamba run -n bindgen cmake -B build -S "../${OCP_src}" -G Ninja \ 
+          micromamba run -n bindgen cmake -B build -S "../${OCP_src}" -G Ninja \
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_OSX_SYSROOT=/opt/MacOSX10.15.sdk/
           micromamba run -n bindgen cmake --build build -j 2 -- -k 0
